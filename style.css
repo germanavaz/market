@@ -1,3 +1,79 @@
-img {
+/* VARIAVEIS  */
+
+:root {
+    --cor-principal: blueviolet;
+}
+
+body {
+    background-color: lightgray;
+    margin:0;
+}
+
+body * { 
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* header */
+
+header {
+    background-color: var(--cor-principal);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+header * {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 1.1rem;
+}
+
+/* main  */
+
+main {
+    margin: 0 auto;
+    max-width: 1000px;
+    min-width: 200px;
+    padding-top: 1.5rem;
+}
+
+#container-produto {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-produto {
+    background-color: #fff;
+    padding: .8rem;
+    border-radius: .4rem;
+}
+
+.prod-marca, .prod-preco {
+    color: grey;
+    font-size: .9rem;
+}
+
+.prod-nome {
+    font-weight: 600;
+}
+
+.prod-img {
     width: 200px;
+    border-radius: .4rem;
+}
+
+/* botão  */
+
+.button {
+    background-color: var(--cor-principal);
+    border: none;
+    padding: .4rem;
+    align-content: center;
+    display: inline-block;
+    width:200px;
+    border-radius: .4rem;
+    color: #fff;
 }

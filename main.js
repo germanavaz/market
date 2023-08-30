@@ -50,12 +50,12 @@ const catalogo = [{
 
 for (produto of catalogo) {
     const cartaoProduto = `
-        <div id="card-produto">
-            <img src="./assets/img/${produto.imagem}" alt="">
-            <p>${produto.marca} </p>
-            <p>${produto.nome}</p>
-            <p>$${produto.preco}</p>
-            <button>Adicionar</button>
+        <div id="card-produto-${produto.id}" class="card-produto">
+            <img class ="prod-img" src="./assets/img/${produto.imagem}" alt="">
+            <p class="prod-marca">${produto.marca} </p>
+            <p class="prod-nome">${produto.nome}</p>
+            <p class="prod-preco">R$${produto.preco}</p>
+            <button class="button"><i class="fa-solid fa-cart-plus"></i></button>
         </div>
     `
     
