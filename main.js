@@ -1,7 +1,7 @@
 const catalogo = [{
     id: 1,
     marca: "@germ4na",
-    nome: "Adesivo Gatinhos",
+    nome: "Adesivo Gatinho na Nave",
     preco: 7,
     imagem: "product-1.png",
     adesivo: true,
@@ -9,7 +9,7 @@ const catalogo = [{
 {
     id: 2,
     marca: "@germ4na",
-    nome: "Adesivo Gatinho na Nave",
+    nome: "Adesivo Gatinhos",
     preco: 7,
     imagem: "product-2.png",
     adesivo: true,
@@ -61,3 +61,4 @@ for (produto of catalogo) {
     
     document.getElementById("container-produto").innerHTML += cartaoProduto;
 }
+

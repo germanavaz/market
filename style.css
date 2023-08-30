@@ -11,6 +11,12 @@ body {
 
 body * { 
     font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+button {
+    background-color: transparent;
+    border: none;
 }
 
 /* header */
@@ -23,9 +29,6 @@ header {
 }
 
 header * {
-    background-color: transparent;
-    color: #fff;
-    border: none;
     font-size: 1.1rem;
 }
 
@@ -58,6 +61,7 @@ main {
 
 .prod-nome {
     font-weight: 600;
+    color: #000;
 }
 
 .prod-img {
@@ -69,11 +73,48 @@ main {
 
 .button {
     background-color: var(--cor-principal);
-    border: none;
     padding: .4rem;
     align-content: center;
     display: inline-block;
     width:200px;
     border-radius: .4rem;
-    color: #fff;
+}
+
+
+/* CARRINHO  */
+
+#carrinho {
+    visibility: hidden;
+}
+
+#carrinho.active {
+    visibility: visible;
+
+}
+
+section#carrinho {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--cor-principal);
+    height: 100vh;
+    width: 16rem;
+}
+
+#header-carrinho {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+#fechar-carrinho {
+    font-size: 1.2rem;
+}
+
+#finalizar-compra {
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
 }
