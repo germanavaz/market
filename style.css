@@ -76,7 +76,7 @@ main {
 
 /* botão  */
 
-.button {
+.button-produto {
     background-color: var(--cor-principal);
     padding: .4rem;
     align-content: center;
@@ -85,32 +85,42 @@ main {
     border-radius: .4rem;
 }
 
+.button-produto:hover {
+    background-color: #800080;
+}
+
+
+
 
 /* CARRINHO  */
 
-#carrinho {
-    visibility: hidden;
-    z-index: 1;
-}
-
-#carrinho.active {
-    visibility: visible;
-
-}
 
 section#carrinho {
+    visibility: hidden;
+    z-index: 1;
     position: fixed;
     top: 0;
     right: 0;
     background-color: var(--cor-principal);
     height: 100vh;
     width: 16rem;
+
+    border-left: 2px solid #f1f1f1;
+    padding: 0 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#carrinho.active {
+    visibility: visible;    
 }
 
 #header-carrinho {
     display: flex;
     justify-content: space-between;
-    margin: 1rem;
+    margin: 0;
 }
 
 #fechar-carrinho {
@@ -123,4 +133,38 @@ section#carrinho {
     font-size: 1rem;
     font-weight: 600;
     padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/* CARDS DO CARRINHO  */
+
+#produtos-carrinho article {
+    display: flex;
+
+    background-color: #f1f1f1;
+    border-radius: .4rem;
+
+    position: relative;
+    
+}
+
+#produtos-carrinho article p {
+    color: #000;
+    margin: 0;
+
+}
+
+#nome-produto-carrinho {
+    font-size: .85rem;
+}
+
+#produtos-carrinho img {
+    max-width: 80px;
+    border-radius: .4rem 0 0 .4rem;
+    
+}
+
+#produtos-carrinho div {
+    padding-top: .3rem;
 }
