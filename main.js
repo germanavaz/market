@@ -69,11 +69,13 @@ botaoFecharCarrinho.addEventListener('click', toggleCarrinho);
 
 function removerDoCarrinho(idProduto) {
     delete idsProdutoCarrinhoComQuantidade[idProduto];
+    atualizarPrecoCarrinho();
     renderizarProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto) {
     idsProdutoCarrinhoComQuantidade[idProduto]++;
+    atualizarPrecoCarrinho();
     atualizarInformacaoQuantidade(idProduto);
 }
 
@@ -83,6 +85,7 @@ function decrementarQuantidadeProduto(idProduto) {
         return;
     }
     idsProdutoCarrinhoComQuantidade[idProduto]--;
+    atualizarPrecoCarrinho();
     atualizarInformacaoQuantidade(idProduto);
 }
 
@@ -112,6 +115,7 @@ function desenharProdutoNoCarrinho(idProduto) {
         <button id="incrementar-produto-${produt.id}">+</button> 
 
     </div>`;
+    atualizarPrecoCarrinho();
 
     elementoArticle.innerHTML = cartaoProdutoCarrinho;
     containerProdutosCarrinho.appendChild(elementoArticle);
@@ -148,12 +152,22 @@ function adicionarAoCarrinho(idProduto) {
 
 }
 
+function atualizarPrecoCarrinho() {
+    const precoCarrinho = document.getElementById("preco-total");
+    let precoTotalCarrinho = 0;
+    for (const idProdutoNoCarrinho in idsProdutoCarrinhoComQuantidade) {
+        precoTotalCarrinho += catalogo.find((p) => p.id === idProdutoNoCarrinho).preco * idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
+    }
+
+    precoCarrinho.innerText = `Total: R$${precoTotalCarrinho}`
+}
+
 // CARTÃO PRODUTO 
 
 function renderizarCatalogo() {
     for (produto of catalogo) {
         const cartaoProduto = `
-            <div id="card-produto-${produto.id}" class="card-produto">
+            <div id="card-produto-${produto.id}" class="card-produto ${produto.adesivo ? 'adesivo' : 'boton'}">
                 <img class ="prod-img" src="./assets/img/${produto.imagem}" alt="">
                 <p class="prod-marca">${produto.marca} </p>
                 <p class="prod-nome">${produto.nome}</p>
